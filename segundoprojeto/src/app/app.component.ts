@@ -12,7 +12,9 @@ export class AppComponent {
   esconderCaixa = true;
 
   numero: number | undefined;
-  
+
+  produto: any;
+
   escolher() {
     this.numero = Math.floor(Math.random() * 100) + 1;
   }
@@ -28,6 +30,10 @@ export class AppComponent {
     console.log(nomeInput.value);
     this.nome = nomeInput.value;
     this.esconderCaixa = nomeInput.value.length <= 0;
+  }
+
+  alterarProduto(produtoInput: { value: string; }) {
+    this.produto = 'Novo produto: ' + produtoInput.value;
   }
 
 }
